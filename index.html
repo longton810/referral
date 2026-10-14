@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Dental Referral | Long Ton</title><link rel="stylesheet" href="style.css?v=1be3388dad"></head>
+<body>
+<header class="page-header"><div><div class="eyebrow">LECOM • Erie Dental Offices</div><h1>Dental referral</h1></div><a class="quiet-link" href="https://longton810.github.io/" target="_blank" rel="noopener">Dental Notes</a></header>
+<main class="workspace">
+<form id="referralForm">
+<section class="panel"><h2>Information</h2>
+<div class="information-row patient-row">
+<label>Date<input id="date" name="date" type="date"></label>
+<label>Patient first name<input name="firstName" aria-label="Patient first name" maxlength="50"></label>
+<label>Patient last name<input name="lastName" aria-label="Patient last name" maxlength="50"></label>
+</div>
+<div class="information-row demographics-row">
+<label>Gender<select id="gender" name="gender"><option value=""></option><option>Male</option><option>Female</option><option>Other</option></select><input id="genderOther" name="genderOther" aria-label="Other gender" placeholder="Gender" maxlength="30" hidden></label>
+<label>Age<input id="age" name="age" type="number" min="0" max="120" step="1"></label>
+<label class="option child-choice"><input id="child" name="child" type="checkbox">Patient is a child</label>
+</div>
+<div class="information-row provider-row">
+<label>Student Doctor<input name="student" value="Long T. Ton" maxlength="70"></label>
+<label>Attending Dentist<select id="attending" name="attending"><option value=""></option><option value="Dr. Doyle">Dr. Doyle</option><option value="Dr. Hoch">Dr. Hoch</option><option value="Dr. Kohler">Dr. Kohler</option><option value="Dr. Palo">Dr. Palo</option><option value="Dr. McAllister">Dr. McAllister</option><option value="Dr. Roberts">Dr. Roberts</option><option value="Dr. Calderbank">Dr. Calderbank</option><option value="Dr. Goldsmith">Dr. Goldsmith</option><option value="Dr. Pollock">Dr. Pollock</option><option value="Dr. Poe">Dr. Poe</option><option value="Others">Others</option></select><input id="attendingOther" name="attendingOther" placeholder="Preceptor name" aria-label="Other attending dentist" maxlength="80" hidden></label>
+<label>Dental clinic<input name="clinic" value="POD-2" maxlength="20"></label>
+</div>
+<p class="muted">Entering an age under 18 selects the child option. You can change the checkbox.</p>
+</section>
+<section class="panel"><h2>Dental specialist</h2><div id="specialists" class="option-grid"></div></section>
+<section class="panel"><h2>Teeth for referral</h2><div class="tooth-selector"><div id="upperTeeth" class="tooth-arch" role="group" aria-label="Upper teeth 1 to 16"></div><div id="lowerTeeth" class="tooth-arch" role="group" aria-label="Lower teeth 32 to 17"></div></div></section>
+<section class="panel"><h2>Requested treatment</h2><label for="treatment">Treatment or reason for referral<textarea id="treatment" name="treatment" rows="4" maxlength="500"></textarea></label><p id="treatmentCount" class="muted"></p><p class="muted">The PDF has space for three lines. The preview will ask you to shorten text that does not fit.</p></section>
+</form>
+<section class="panel preview-panel"><div class="preview-header"><h2>Referral form</h2></div><iframe id="pdfPreview" title="Filled referral form preview"></iframe><div class="download-controls"><button id="updatePreview" class="primary preview-action" type="button">Update preview</button><button id="downloadPdf" class="primary" type="button">Download filled PDF</button></div><p id="exportStatus" role="status" aria-live="polite"></p></section>
+</main>
+<footer class="clear-all-area"><button id="clearAll" type="button" class="danger">Clear All</button></footer>
+<dialog id="clearAllDialog" aria-labelledby="clearAllTitle"><h2 id="clearAllTitle">Clear all information?</h2><p>This will reset the form and remove saved information in this browser.</p><div class="dialog-actions"><button id="cancelClearAll" type="button" class="secondary" autofocus>Cancel</button><button id="confirmClearAll" type="button" class="danger">Clear All</button></div></dialog>
+<script src="script.js?v=95b7ae3860"></script>
+</body></html>
