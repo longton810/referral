@@ -169,6 +169,7 @@ if(typeof document!=='undefined') {
   try {
     const saved=JSON.parse(localStorage.getItem(key)||'null');
     if(saved) {
+      if (["Long T. Ton", "Long Ton"].includes(saved.student)) saved.student = "";
       if(saved.attending && ![...document.getElementById('attending').options].some(option=>option.value===saved.attending)) { saved.attendingOther=saved.attending; saved.attending='Others'; }
       [...form.elements].forEach(input=> {
         if(!input.name) return;
